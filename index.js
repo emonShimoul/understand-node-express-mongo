@@ -10,7 +10,8 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function run() {
     try{
-
+        await client.connect();
+        console.log('database connected');
     }
     finally{
         // await client.close()
@@ -31,10 +32,9 @@ One Time:
 1. nodemon globally installed
 2. mongodb atlas access, user
 3. Network Access (ip address allow)
-Connect
 
-Every Projects
-1. install mongodb
+Every Projects:
+1. install mongodb, express, cors, dotenv
 2. import (require), mongodb
 3. copy uri (connection string)
 4. create the client (copy code from atlas)
@@ -47,4 +47,6 @@ Every Projects
 11. create async function run and call it by using run().catch(console.dir)
 12. add try and finally inside the run function.
 13. comment out await client.close() to keep the connection alive
+14. add await client.connect() inside the try block
+15. use a console.log() after the client.connect to ensure database is connected
 */
