@@ -5,6 +5,7 @@ const app = express()
 const port = 5000;
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.pabg0.mongodb.net/?retryWrites=true&w=majority`;
+console.log(uri);
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 app.get('/', (req, res) => {
@@ -30,5 +31,7 @@ Every Projects
 5. create or get database access credentials (username, password)
 6. create .env file and add DB_USER and DB_PASS as environment variable
 7. make sure you require (import) dotenv
-8. Add DB_USER and DB_PASS in the connection URI string
+8. Convert URI string to a template string. 
+9. Add DB_USER and DB_PASS in the connection URI string
+10. Check URI string by using console.log()
 */
